@@ -21,7 +21,19 @@ describe BankAccount do
     end
   end
 
-  
+
+  describe '#withdraw' do
+    it 'responds to withdraw' do
+      expect(@bankaccount).to respond_to(:withdraw).with(1).argument
+    end
+
+    it 'lets you withdraw money from your account' do
+      @balance = @bankaccount.balance
+      @bankaccount.deposit(10)
+      expect(@bankaccount.withdraw(10)).to eq(@balance)
+    end
+
+  end
 
 
 end
