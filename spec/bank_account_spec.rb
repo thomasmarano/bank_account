@@ -1,14 +1,13 @@
-require 'bankaccount'
+require 'bank_account'
 
 
-# describe Bankaccount do
-#
-#   it 'has a balance' do
-#     expect(subject).to respond_to(:balance)
-#   end
-#
-#
-# end
+describe BankAccount do
+
+  it 'initializes with a balance of 0' do
+    expect(subject.balance).to eq(0)
+  end
+
+end
 
 
 #
