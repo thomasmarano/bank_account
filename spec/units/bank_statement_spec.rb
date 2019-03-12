@@ -2,7 +2,6 @@ require 'bank_statement'
 require 'bank_account'
 
 describe BankStatement do
-  let(:bankaccount) { double :bankaccount }
 
   before(:each) do
     @bankstatement = BankStatement.new
@@ -21,7 +20,7 @@ describe BankStatement do
     end
   end
 
-  describe '#createsStatement' do
+  describe '#display_statement' do
     it 'creates the right format for your bank statement' do
       @bankaccount.deposit(10)
       @bankaccount.deposit(20)

@@ -63,22 +63,22 @@ I want to view a copy of all transactions from a particular month, with credit, 
 2.5.1 :001 > require './lib/bank_account.rb'
  => true
 2.5.1 :002 > require './lib/bank_statement.rb'
- => true
-2.5.1 :003 > account = BankAccount.new
- => #<BankAccount:0x00007fbf56816bf0 @balance=0, @bank_statement=#<BankStatement:0x00007fbf56816bc8 @transactions=[]>>
-2.5.1 :004 > account.deposit(5)   
- => [["03/12/2019", 5, "", 5]]
+ => false
+2.5.1 :003 > statement = BankStatement.new
+ => #<BankStatement:0x00007f8d070fbba8 @transactions=[]>
+2.5.1 :004 > account = BankAccount.new(statement)
+ => #<BankAccount:0x00007f8d070ed350 @balance=0, @bank_statement=#<BankStatement:0x00007f8d070fbba8 @transactions=[]>>
 2.5.1 :005 > account.deposit(100)
- => [["03/12/2019", 5, "", 5], ["03/12/2019", 100, "", 105]]
-2.5.1 :006 > account.withdraw(30)  
- => [["03/12/2019", 5, "", 5], ["03/12/2019", 100, "", 105], ["03/12/2019", "", 30, 75]]
-2.5.1 :007 > account.bank_statement.display_statement
+ => [["03/12/2019", 100, "", 100]]
+2.5.1 :006 > account.deposit(50)
+ => [["03/12/2019", 100, "", 100], ["03/12/2019", 50, "", 150]]
+2.5.1 :007 > account.withdraw(25)
+ => [["03/12/2019", 100, "", 100], ["03/12/2019", 50, "", 150], ["03/12/2019", "", 25, 125]]
+2.5.1 :008 > statement.display_statement
 date || credit || debit || balance
-03/12/2019 ||  || 30 || 75
-03/12/2019 || 100 ||  || 105
-03/12/2019 || 5 ||  || 5
- => nil
-2.5.1 :008 >
+03/12/2019 ||  || 25 || 125
+03/12/2019 || 50 ||  || 150
+03/12/2019 || 100 ||  || 100
 
 ```
 

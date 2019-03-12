@@ -1,12 +1,14 @@
 class BankStatement
 
   attr_reader :transactions
+
   def initialize
     @transactions = []
   end
 
   def add_to_statement(deposit, withdrawal, balance)
-    @transactions.push([Time.now.strftime("%m/%d/%Y"), deposit, withdrawal, balance])
+    today_date = Time.now.strftime("%m/%d/%Y")
+    @transactions.push([today_date, deposit, withdrawal, balance])
   end
 
   def display_statement
