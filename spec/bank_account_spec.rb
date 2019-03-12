@@ -6,14 +6,10 @@ describe BankAccount do
       @bankaccount = BankAccount.new
   end
 
-
   it 'initializes with a balance of 0' do
     expect(@bankaccount.balance).to eq(0)
   end
 
-  it 'initializes with a bank statement as an empty array' do
-    expect(@bankaccount.bankStatement).to eq([])
-  end
 
   describe '#deposit' do
     it 'responds to deposit' do
@@ -38,15 +34,4 @@ describe BankAccount do
       expect(@bankaccount.balance).to eq(@balance)
     end
   end
-
-  describe '#addToStatement' do
-    it 'adds a deposit to bank statement with the current balance and date' do
-      @bankaccount.deposit(10)
-      @bankaccount.addToStatement(10, 0)
-      date = Time.now.strftime("%m/%d/%Y")
-      expect(@bankaccount.bankStatement).to include([date, 10, 0, 10])
-    end
-  end
-
-
 end
