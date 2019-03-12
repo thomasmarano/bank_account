@@ -1,10 +1,14 @@
 
+# Bank Tech Test
+
+## Introduction
+
+Bank tech test is a program for customers of banks that lets them deposit money, withdraw money & view their account statement.
 
 ## Requirements
 
 Deposits, withdrawal.
 Account statement (date, amount, balance) printing.
-
 
 ## Acceptance criteria
 
@@ -19,7 +23,16 @@ date || credit || debit || balance
 13/01/2012 || 2000.00 || || 3000.00
 10/01/2012 || 1000.00 || || 1000.00
 
-## User stories
+## How to run this program
+
+* Clone this repository
+* Run `bundle install` to install dependencies
+* Run `Rspec` to run tests
+
+
+## User Stories
+
+```
 
 As a customer,
 So I know how much money I have,
@@ -41,15 +54,17 @@ As a customer,
 So I can see my bank activity,
 I want to view a copy of all transactions from a particular month, with credit, debit & balance (in the format above)
 
+```
+
+## Structure & Approach
+
+I separated my code into 2 classes
+
+  * BankAccount - this class lets users deposit and withdraw money
+  * BankStatement - this class lets users view their account statement
+
+By structuring the code in this way, each class has a distinct responsibility separate from one another.
+
 ## Technologies
 
 * Ruby 2.5.1
-
-Introduction - the project's aim
-Launch
-
-Describe how to install dependencies, run your tests, and run the project?
-
-Describe your approach?
-
-Describe how you structured your code and why?
