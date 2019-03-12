@@ -3,13 +3,12 @@ require 'bank_account'
 describe BankAccount do
 
   before(:each) do
-      @bankaccount = BankAccount.new
+    @bankaccount = BankAccount.new
   end
 
   it 'initializes with a balance of 0' do
     expect(@bankaccount.balance).to eq(0)
   end
-
 
   describe '#deposit' do
     it 'responds to deposit' do
@@ -20,7 +19,6 @@ describe BankAccount do
       expect(@bankaccount.balance).to eq(10)
     end
   end
-
 
   describe '#withdraw' do
     it 'responds to withdraw' do
