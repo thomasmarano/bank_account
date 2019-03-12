@@ -3,6 +3,8 @@ require 'bank_account'
 
 describe BankStatement do
 
+  
+
   before(:each) do
     @bankstatement = BankStatement.new
     @bankaccount = BankAccount.new
@@ -26,8 +28,6 @@ describe BankStatement do
     it 'creates the right format for your bank statement' do
       @bankaccount.deposit(10)
       @bankaccount.deposit(20)
-      # @bankaccount.withdraw(5)
-      # @bankaccount.bankStatement.displayStatement
       expect {@bankaccount.bankStatement.displayStatement}.to output("date || credit || debit || balance\n03/12/2019 || 20 ||  || 30\n03/12/2019 || 10 ||  || 10\n").to_stdout
     end
   end

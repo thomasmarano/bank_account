@@ -34,4 +34,5 @@ describe BankAccount do
       expect(@bankaccount.balance).to eq(@balance)
     end
   end
+
 end
