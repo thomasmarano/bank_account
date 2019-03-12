@@ -17,9 +17,18 @@ describe BankStatement do
   describe '#addToStatement' do
     it 'adds a deposit to bank statement with the current balance and date' do
       @bankaccount.deposit(10)
-      # @bankaccount.addToStatement(10, 0)
       date = Time.now.strftime("%m/%d/%Y")
-      expect(@bankaccount.bankStatement.transactions).to include([date, 10, 0, 10])
+      expect(@bankaccount.bankStatement.transactions).to include([date, 10, '', 10])
+    end
+  end
+
+  describe '#createsStatement' do
+    it 'creates the right format for your bank statement' do
+      @bankaccount.deposit(10)
+      @bankaccount.deposit(20)
+      # @bankaccount.withdraw(5)
+      # @bankaccount.bankStatement.displayStatement
+      expect {@bankaccount.bankStatement.displayStatement}.to output("date || credit || debit || balance\n03/12/2019 || 20 ||  || 30\n03/12/2019 || 10 ||  || 10\n").to_stdout
     end
   end
 

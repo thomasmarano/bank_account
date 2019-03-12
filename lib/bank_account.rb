@@ -11,12 +11,12 @@ class BankAccount
 
     def deposit(amount)
         @balance += amount
-        @bankStatement.addToStatement(amount, 0, @balance)
+        @bankStatement.addToStatement(amount, '', @balance)
     end
 
     def withdraw(amount)
         @balance -= amount
-        @bankStatement.addToStatement(0, amount, @balance)
+        @bankStatement.addToStatement('', amount, @balance)
     end
 
 end
