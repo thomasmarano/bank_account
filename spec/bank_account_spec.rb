@@ -20,7 +20,8 @@ describe BankAccount do
       expect(@bankaccount).to respond_to(:deposit).with(1).argument
     end
     it 'lets you deposit money in your account' do
-      expect(@bankaccount.deposit(10)).to eq(10)
+      @bankaccount.deposit(10)
+      expect(@bankaccount.balance).to eq(10)
     end
   end
 
@@ -33,7 +34,8 @@ describe BankAccount do
     it 'lets you withdraw money from your account' do
       @balance = @bankaccount.balance
       @bankaccount.deposit(10)
-      expect(@bankaccount.withdraw(10)).to eq(@balance)
+      @bankaccount.withdraw(10)
+      expect(@bankaccount.balance).to eq(@balance)
     end
   end
 

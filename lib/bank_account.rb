@@ -9,12 +9,12 @@ class BankAccount
 
     def deposit(amount)
         @balance += amount
-        # addToStatement(amount, 0)
+        addToStatement(amount, 0)
     end
 
     def withdraw(amount)
         @balance -= amount
-        # addToStatement(0, amount)
+        addToStatement(0, amount)
     end
 
     def addToStatement(deposit, withdrawal)
